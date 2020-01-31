@@ -8,7 +8,7 @@ class Song
 #   # @@all << self
 # end
 def self.create
-  song = Song.new 
+  song = Song.new
   song.save
   song
  end
@@ -24,26 +24,26 @@ def self.create
    song.save
    song
  end
- 
+
    def self.find_by_name(name)
         @@all.find do |song|
            song.name == name
       # binding.pry
-   
-        end   
+
+        end
     end
-    
-    
+
+
     def Song.find_or_create_by_name(name)
    self.find_by_name(name) || self.create_by_name(name)
-       
-   
+
+
     end
-    
+
     def self.alphabetical
   self.all.sort_by {|song|song.name}
     end
-    
+
     def self.new_from_filename(file_name)
       # file_name.sort_by
       new_song = self.new
@@ -51,9 +51,9 @@ def self.create
       # file_name.gsub("Thundercat - For Love I Come.mp3","For Love I Come")
        new_song.artist_name = song_info[0]
      new_song.name = song_info[1].gsub(".mp3","")
-      
+
           new_song
-      # binding.pry    
+      # binding.pry
        end
        def self.create_from_filename(file_name)
       new_song = self.new
@@ -64,35 +64,23 @@ def self.create
      new_song.save
        new_song
          end
-    
+
   def self.all
     @@all
   end
-  
+
   def save
     self.class.all << self
   end
-  
-  
-  
-  
+
+
+
+
   def self.destroy_all
 # <<<<<<< HEAD
     @@all =[]
 # =======
-    
+
 # >>>>>>> 5f4baa4311296e1e667bbe740e1163b9643b4d4c
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
