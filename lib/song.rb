@@ -77,7 +77,11 @@ def self.create
   
   
   def self.destroy_all
+<<<<<<< HEAD
     @@all =[]
+=======
+    
+>>>>>>> 5f4baa4311296e1e667bbe740e1163b9643b4d4c
   end
 end
 
